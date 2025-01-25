@@ -14,13 +14,13 @@ class ContactController extends Controller
 
   public function confirm(ContactRequest $request)
   {
-    $contact = $request->only(['name', 'email', 'tel', 'content']);
+    $contact = $request->only(['name', 'email', 'gender', 'tel', 'content', 'address', 'building', 'inquiry-type']);
     return view('confirm', compact('contact'));
   }
 
   public function store(ContactRequest $request)
   {
-    $contact = $request->only(['name', 'email', 'tel', 'content']);
+    $contact = $request->only(['name', 'email', 'gender', 'tel', 'content', 'address', 'building', 'inquiry-type']);
     Contact::create($contact);
     return view('thanks');
   }
@@ -28,9 +28,9 @@ class ContactController extends Controller
   public function rules()
   {
     return [
-        'name' => ['required', 'string', 'max:255'],
-        'email' => ['required', 'string', 'email', 'max:255'],
-        'tel' => ['required', 'numeric', 'digits_between:10,11'],
+      'name' => ['required', 'string', 'max:255'],
+      'email' => ['required', 'string', 'email', 'max:255'],
+      'tel' => ['required', 'numeric', 'digits_between:10,11'],
     ];
   }
 }
