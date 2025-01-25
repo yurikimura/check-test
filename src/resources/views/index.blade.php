@@ -40,7 +40,7 @@
           男性
         </label>
         <label>
-          <input type="radio" name="gender" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}">
+          <input type="radio" name="gender" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}>
           女性
         </label>
         <label>
