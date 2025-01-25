@@ -36,15 +36,15 @@
       </div>
       <div class="form__group-content">
         <label>
-          <input type="radio" name="gender" value="{{ old('gender') == '男性' ? 'checked' : '' }}">
+          <input type="radio" name="gender" value="男性" {{ old('gender') == '男性' ? 'checked' : '' }}>
           男性
         </label>
         <label>
-          <input type="radio" name="gender" value="{{ old('gender') == '女性' ? 'checked' : '' }}">
+          <input type="radio" name="gender" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}">
           女性
         </label>
         <label>
-          <input type="radio" name="gender" value="{{ old('gender') == 'その他' ? 'checked' : '' }}">
+          <input type="radio" name="gender" value="その他" {{ old('gender') == 'その他' ? 'checked' : '' }}>
           その他
         </label>
       </div>
