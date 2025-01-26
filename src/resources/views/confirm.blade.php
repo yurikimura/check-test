@@ -32,30 +32,30 @@
           </td>
         </tr>
         <tr class="confirm-table__row">
-          <th class="confirm-table__header">電話番号</th>
+          <th class="confirm-table__header"></th>
           <td class="confirm-table__text">
             <input type="tel" name="tel" value="{{ $contact['tel'] }}" readonly />
           </td>
         </tr>
         <tr class="confirm-table__row">
-          <th class="confirm-table__header">住所</th>
+          <th class="confirm-table__header"></th>
           <td class="confirm-table__text">
             <input type="text" name="address" value="{{ $contact['address'] }}" readonly />
           </td>
         <tr class="confirm-table__row">
-          <th class="confirm-table__header">建物名</th>
+          <th class="confirm-table__header"></th>
           <td class="confirm-table__text">
             <input type="text" name="building" value="{{ $contact['building'] }}" readonly />
           </td>
         </tr>
         <tr class="confirm-table__row">
-          <th class="confirm-table__header">お問い合わせの種類</th>
+          <th class="confirm-table__header"></th>
           <td class="confirm-table__text">
-            <input type="text" name="inquiry-type" value="{{ $contact['inquiry-type'] }}" readonly />
+            <input type="text" name="categry_id" value="{{ $contact['categry_id'] }}" readonly />
           </td>
         </tr>
         <tr class="confirm-table__row">
-          <th class="confirm-table__header">お問い合わせ内容</th>
+          <th class="confirm-table__header"></th>
           <td class="confirm-table__text">
             <input type="text" name="content" value="{{ $contact['content'] }}" readonly />
           </td>
