@@ -127,7 +127,7 @@
           <select name="inquiry-type" value="{{ old('inquiry-type') }}">
             <option value="">選択してください</option>
             <option value="一般的なお問い合わせ">一般的なお問い合わせ</option>
-            <option value="ビジネスに関するお問い合わせ">ビジネスに関するお問い合わせ</option>
+            <option value="商品の交換について">商品の交換について</option>
             <option value="サポートに関するお問い合わせ">サポートに関するお問い合わせ</option>
           </select>
         </div>

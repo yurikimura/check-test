@@ -15,8 +15,11 @@
   <header class="header">
     <div class="header__inner">
       <a class="header__logo" href="/">
-        FashionablyLatehogehoge
+        FashionablyLate
       </a>
+      <form>
+        <button class="header-nav__button">ログアウト</button>
+      </form>
     </div>
   </header>
 
