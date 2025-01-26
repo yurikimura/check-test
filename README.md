@@ -26,7 +26,7 @@ Laravel 環境構築
 
 ## ER 図
 
-< - - - 作成した ER 図の画像 - - - >
+<img width="651" alt="Image" src="https://github.com/user-attachments/assets/0bf094ea-e982-4b8d-bfd7-b58fe19ab36d" />
 
 ## URL
 
