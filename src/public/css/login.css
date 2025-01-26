@@ -1,3 +1,14 @@
+h2 {
+  color: #8B7969;
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+body {
+  background-color: #F1ECE7;
+}
+
 .login-form__content {
   margin: 0 auto;
   padding: 30px 15px;
@@ -57,4 +68,11 @@
 .register__link {
   margin-top: 20px;
   text-align: center;
+}
+
+.form__container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -1,3 +1,8 @@
+h2 {
+  font: 'Inika';
+  color: #8B7969;
+}
+
 .confirm__content {
   margin: 0 auto;
   padding: 30px 15px;
@@ -60,4 +65,17 @@
   background: #000;
   color: #fff;
   cursor: pointer;
+}
+
+.name-input {
+  display: inline-block;
+  align-items: center;
+  width: calc(50% - 10px);
+  /* 各入力フィールドの幅を調整 */
+  margin-right: 10px;
+}
+
+.name-input:last-child {
+  margin-right: 0;
+  /* 最後の入力フィールドの右側の空白を削除 */
 }

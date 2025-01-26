@@ -8,6 +8,7 @@
   <title>Check-Test</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
   @yield('css')
 </head>
 
@@ -18,7 +19,7 @@
         FashionablyLate
       </a>
       <form>
-        <button class="header-nav__button">ログアウト</button>
+        <button class="header__register">register</button>
       </form>
     </div>
   </header>
