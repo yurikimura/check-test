@@ -4,7 +4,7 @@
 
 Docker ビルド
 
-1. `git clone https://github.com/yurikimura/check-test
+1. `git clone https://github.com/yurikimura/check-test`
 2. `docker-compose up -d --build`
 
 ※ MySQL は、OS によって起動しない場合があるのでそれぞれの PC に合わせて docker-compose.yaml ファイルを編集してください。
