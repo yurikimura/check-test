@@ -1,6 +1,8 @@
 h2 {
-  font: 'Inika';
   color: #8B7969;
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 35px;
 }
 
 .confirm__content {
@@ -57,14 +59,18 @@ h2 {
 }
 
 .form__button-submit {
-  padding: 10px;
-  width: 30%;
-  height: 50px;
-  border: none;
-  border-radius: 3px;
-  background: #000;
+  width: 120px;
+  height: 42px;
+  background-color: #5d4b3d;
   color: #fff;
-  cursor: pointer;
+}
+
+.form__button-return {
+  width: 120px;
+  height: 42px;
+  font-family: 'Inika', serif;
+  size: 20px;
+  color: #5d4b3d;
 }
 
 .name-input {

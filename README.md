@@ -30,5 +30,7 @@ Laravel 環境構築
 
 ## URL
 
-- 開発環境：http://localhost/
+- 開発環境
+  - ホーム画面 http://localhost/
+  - オーナー向け画面 http://localhost/admin
 - phpMyAdmin : http://localhost:8080/
