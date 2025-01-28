@@ -3,10 +3,29 @@ h2 {
   font-family: 'Inika', serif;
   font-weight: 400;
   font-size: 35px;
+  text-align: center;
 }
 
 .admin__content {
   margin: 0 auto;
   padding: 30px 15px;
   max-width: 1230px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  background-color: #8B7969;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: normal;
+}
+
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #E0DFDE;
 }
