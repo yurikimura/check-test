@@ -36,8 +36,11 @@
 .header__register {
   width: 100px;
   height: 34px;
-  border: 1px;
-  color: #fff;
-  border-color: #D9C6B5;
+  color: #D9C6B5;
+  background: #F0F0F099;
+  border: 1px solid #D9C6B5;
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 20px;
   margin-left: auto; /* 右端に寄せる */
 }
