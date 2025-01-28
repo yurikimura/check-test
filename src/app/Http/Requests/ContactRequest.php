@@ -31,7 +31,7 @@ class ContactRequest extends FormRequest
             'tel' => ['required', 'numeric', 'digits_between:10,11'],
             'address' => ['required', 'string', 'max:255'],
             'building' => ['nullable', 'string', 'max:255'],
-            'categry_id' => ['required', 'string', 'max:255'],
+            'category_id' => ['required', 'string', 'max:255'],
             'detail' => ['required', 'string', 'max:1000'],
         ];
     }

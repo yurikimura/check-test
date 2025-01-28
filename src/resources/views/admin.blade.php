@@ -36,7 +36,7 @@
           <td>{{ $contact->tel }}</td>
           <td>{{ $contact->address }}</td>
           <td>{{ $contact->building }}</td>
-          <td>{{ $contact->categry_id }}</td>
+          <td>{{ $contact->category_id }}</td>
           <td>{{ $contact->detail }}</td>
           <td>{{ $contact->created_at }}</td>
           <td>{{ $contact->updated_at }}</td>
