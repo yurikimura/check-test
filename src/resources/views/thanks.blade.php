@@ -1,8 +1,12 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="ja">
 
-@section('css')
-<link rel="stylesheet" href="{{ asset('css/thanks.css') }}">
-@endsection
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanks</title>
+  <link rel="stylesheet" href="{{ asset('css/thanks.css') }}">
+</head>
 
 <body>
   <div class="background-text">Thank you</div>
