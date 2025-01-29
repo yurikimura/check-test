@@ -75,8 +75,14 @@
         <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
-        <div class="form__input--text">
-          <input type="tel" name="tel" placeholder="09012345678" value="{{ old('tel') }}" required />
+        <div class="form__input--phone">
+          <div class=" phone-group">
+            <input type="tel" id="phone1" name="phone1" placeholder="090" maxlength="3" required>
+            <span class="phone-separator">-</span>
+            <input type="tel" id="phone2" name="phone2" placeholder="1234" maxlength="4" required>
+            <span class="phone-separator">-</span>
+            <input type="tel" id="phone3" name="phone3" placeholder="5678" maxlength="4" required>
+          </div>
         </div>
         <div class="form__error">
           @error('tel')
@@ -119,7 +125,7 @@
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form__group">
       <div class="form__group-title">
         <span class="form__label--item">お問い合わせの種類</span>
         <span class="form__label--required">※</span>
@@ -133,22 +139,24 @@
             <option value="サポートに関するお問い合わせ">サポートに関するお問い合わせ</option>
           </select>
         </div>
+      </div>
+    </div>
 
-        <div class="form__group">
-          <div class="form__group-title">
-            <span class="form__label--item">お問い合わせ内容</span>
-            <span class="form__label--required">※</span>
-          </div>
-          <div class="form__group-content">
-            <div class="form__input--textarea">
-              <textarea name="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
-            </div>
-          </div>
+    <div class="form__group">
+      <div class="form__group-title">
+        <span class="form__label--item">お問い合わせ内容</span>
+        <span class="form__label--required">※</span>
+      </div>
+      <div class="form__group-content">
+        <div class="form__input--textarea">
+          <textarea name="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
         </div>
+      </div>
+    </div>
 
-        <div class="form__button">
-          <button class="form__button-submit" type="submit">確認画面</button>
-        </div>
+    <div class="form__button">
+      <button class="form__button-submit" type="submit">確認画面</button>
+    </div>
   </form>
 </div>
 @endsection

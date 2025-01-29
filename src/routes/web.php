@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
@@ -21,7 +22,11 @@ Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);
+    Route::get('/admin/find', [AdminController::class, 'find'])->name('admin.find');
+    Route::post('/admin/search', [AdminController::class, 'search'])->name('admin.search');
+    Route::get('/admin/categories', [CategoryController::class, 'index']);
+    Route::post('/admin/categories', [CategoryController::class, 'store']);
 });
-Route::get('/categories', [CategoryController::class, 'index']);
-Route::post('/categories', [CategoryController::class, 'store']);
 // Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::get('/find', [AdminController::class, 'find']);
+// Route::post('/find', [AdminController::class, 'search']);
