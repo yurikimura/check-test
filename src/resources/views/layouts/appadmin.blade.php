@@ -18,9 +18,9 @@
       <a class="header__logo" href="/">
         FashionablyLate
       </a>
-      <form>
-        <button class="header__register">register</button>
-      </form>
+      <a class="header__register" href="@yield('register_link', '/register')">
+        @yield('register_text', '')
+      </a>
     </div>
   </header>
 

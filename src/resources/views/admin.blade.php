@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
 
+@section('register_text', 'Logout')
+@section('register_link', route('logout'))
+
 @section('content')
 <div class="admin__content">
   <div class="admin-form__heading">

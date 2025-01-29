@@ -55,14 +55,10 @@ body {
 }
 
 .form__button-submit {
-  padding: 10px;
-  width: 30%;
-  height: 50px;
-  border: none;
-  border-radius: 3px;
-  background: #000;
+  width: 160px;
+  height: 46px;
+  background-color: #82756A;
   color: #fff;
-  cursor: pointer;
 }
 
 .register__link {
