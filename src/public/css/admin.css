@@ -53,6 +53,33 @@ h2 {
   size: 17px;
 }
 
+.select_box
+{
+    margin-top: 30px;
+    text-align: center;
+    width: 20%;
+    height: 46px;
+    background-color: #F4F4F4;
+    border: 1px solid #E3DED9;
+    color: #8B7969;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    size: 17px;
+  }
+
+.date_input {
+  margin-top: 30px;
+  text-align: center;
+  width: 20%;
+  height: 46px;
+  background-color: #F4F4F4;
+  border: 1px solid #E3DED9;
+  color: #8B7969;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  size: 17px;
+}
+
 .form__input--text  input {
     padding: 10px;
     width: 60%;
@@ -71,9 +98,45 @@ h2 {
     height: 38px;
     border: 1px solid #F4F4F4;
     background-color: #E3DED9;
-    font-color: #8B7969;
+    color: #8B7969;
     border-radius: 3px;
     padding: 20px;
 
     appearance: none;
+  }
+
+  .btn-search {
+    background-color: #8B7969;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-size: 17px;
+  }
+
+  .btn-reset {
+    background-color: #D9C6B5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-size: 17px;
+  }
+
+  .btn-export {
+    background-color: #E1DBD699;
+    color: #8B7969;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-size: 17px;
   }

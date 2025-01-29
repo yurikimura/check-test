@@ -34,21 +34,21 @@
       <option value="female">その他</option>
     </select>
 
-    <select class="select-box" , class="form__select--input">
+    <select class="select_box" , class="form__select--input">
       <option value="">お問い合わせの種類</option>
       <option value="product">一般的なお問い合わせ</option>
       <option value="exchange">サポートに関するお問い合わせ</option>
       <option value="exchange">商品の交換について</option>
     </select>
 
-    <input name="date" type="date" />
+    <input class="date_input" name="date" type="date" />
   </div>
 
   <div class="actions">
-    <button class="btn btn-search">検索</button>
-    <button class="btn btn-reset">リセット</button>
+    <button class="btn-search">検索</button>
+    <button class="btn-reset">リセット</button>
     <form action="{{ route('export.csv') }}" method="GET">
-      <button type="submit">エクスポート</button>
+      <button class="btn-export" type="submit">エクスポート</button>
     </form>
   </div>
 

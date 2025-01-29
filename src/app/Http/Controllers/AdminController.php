@@ -7,6 +7,13 @@ use App\Models\User;
 
 class AdminController extends Controller
 {
+
+    // public function admin()
+    // {
+    //     $users = User::paginate(5);
+    //     return view('admin', ['users' => $users]);
+    // }
+
     public function modal()
     {
         return view('admin.modal');
