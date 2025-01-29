@@ -32,7 +32,7 @@ h2 {
   margin-left: 5px;
   padding: 4px 6px;
   border-radius: 3px;
-  background: #fafafa;
+  background: #fff;
   color: red;
 }
 
@@ -77,4 +77,48 @@ h2 {
   height: 46px;
   background-color: #5d4b3d;
   color: #fff;
+}
+
+.form__select--input {
+  padding: 10px;
+  width: 618.82px;
+  height: 38px;
+  border: 1px solid #F4F4F4;
+  background-color: #F4F4F4;
+  border-radius: 3px;
+
+  appearance: none;
+}
+
+.form__radio-label {
+  display: flex;
+  align-items: left;
+  margin-right: 400px;
+}
+
+.form__radio--styled {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #8B7969;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+}
+
+.form__radio--styled:checked {
+  background-color: #8B7969;
+}
+
+.form__radio--styled:checked::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #8B7969;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

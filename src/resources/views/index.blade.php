@@ -36,18 +36,19 @@
         <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
-        <label>
-          <input type="radio" name="gender" value="男性" {{ old('gender') == '男性' ? 'checked' : '' }}>
-          男性
-        </label>
-        <label>
-          <input type="radio" name="gender" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}>
-          女性
-        </label>
-        <label>
-          <input type="radio" name="gender" value="その他" {{ old('gender') == 'その他' ? 'checked' : '' }}>
-          その他
-        </label>
+        <label class="form__radio-label">
+          <label>
+            <input type="radio" name="gender" value="男性" class="form__radio--styled" {{ old('gender') == '男性' ? 'checked' : '' }}>
+            男性
+          </label>
+          <label>
+            <input type="radio" name="gender" value="女性" class="form__radio--styled" {{ old('gender') == '女性' ? 'checked' : '' }}>
+            女性
+          </label>
+          <label>
+            <input type="radio" name="gender" value="その他" class="form__radio--styled" {{ old('gender') == 'その他' ? 'checked' : '' }}>
+            その他
+          </label>
       </div>
     </div>
 
@@ -125,7 +126,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <select name="category_id" value="{{ old('category_id') }}">
+          <select name="category_id" class="form__select--input" value="{{ old('category_id') }}">
             <option value="">選択してください</option>
             <option value="一般的なお問い合わせ">一般的なお問い合わせ</option>
             <option value="商品の交換について">商品の交換について</option>

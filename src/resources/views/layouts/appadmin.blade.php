@@ -18,10 +18,15 @@
       <a class="header__logo" href="/">
         FashionablyLate
       </a>
-      <a class="header__register" href="@yield('register_link', '/register')">
+      <a class="header__register" href="@yield('register_link', '/login')">
         @yield('register_text', '')
       </a>
     </div>
+
+    <form class="form" action="/logout" method="post">
+      @csrf
+      <button class="header-nav__button">ログアウト</button>
+    </form>
   </header>
 
   <main>
