@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -26,7 +28,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/search', [AdminController::class, 'search'])->name('admin.search');
     Route::get('/admin/categories', [CategoryController::class, 'index']);
     Route::post('/admin/categories', [CategoryController::class, 'store']);
+    Route::get('/export/csv', [ExportController::class, 'csvExport'])->name('export.csv');
+    // Route::post('/logout', function () {
+    //     Auth::logout();
+    //     return redirect('/login')->name('logout');
+    // });
 });
+
 // Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Route::get('/find', [AdminController::class, 'find']);
 // Route::post('/find', [AdminController::class, 'search']);

@@ -15,16 +15,11 @@
     <form action="{{ route('admin.search') }}" method="post">
       @csrf
       <div class="form__group">
-        <div class="form__group-title">
-          <label class="form__label--item">名前で検索</label>
-        </div>
         <div class="form__group-content">
-          <input type="text" name="input" value="{{ old('input') }}" class="form__input--text">
+          <div class="form__input--text">
+            <input type="text" name="input" placeholder="名前やメールアドレスを入力せてください" value="{{ old('input') }}" />
+          </div>
         </div>
-      </div>
-      <div class="form__button">
-        <button type="submit" class="form__button-submit">検索</button>
-      </div>
     </form>
     @if(isset($item))
     <div class="search-result">
@@ -32,27 +27,29 @@
       <p>{{ $item->name }}</p>
     </div>
     @endif
-    <select class="select-box">
+    <select class="gender_input" , class="form__select--input">
       <option value="">性別</option>
       <option value="male">男性</option>
       <option value="female">女性</option>
+      <option value="female">その他</option>
     </select>
 
-    <select class="select-box">
+    <select class="select-box" , class="form__select--input">
       <option value="">お問い合わせの種類</option>
-      <option value="product">商品について</option>
+      <option value="product">一般的なお問い合わせ</option>
+      <option value="exchange">サポートに関するお問い合わせ</option>
       <option value="exchange">商品の交換について</option>
     </select>
 
-    <select class="select-box">
-      <option value="">年/月/日</option>
-    </select>
+    <input name="date" type="date" />
   </div>
 
   <div class="actions">
     <button class="btn btn-search">検索</button>
     <button class="btn btn-reset">リセット</button>
-    <button class="btn btn-export">エクスポート</button>
+    <form action="{{ route('export.csv') }}" method="GET">
+      <button type="submit">エクスポート</button>
+    </form>
   </div>
 
   <table class="data-table">
