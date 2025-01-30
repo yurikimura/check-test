@@ -22,6 +22,7 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
+Route::resource('contacts', ContactController::class);
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);
     Route::get('/admin/find', [AdminController::class, 'find'])->name('admin.find');

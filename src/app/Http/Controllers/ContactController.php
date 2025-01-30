@@ -33,8 +33,15 @@ class ContactController extends Controller
 
   public function admin()
   {
-    $contacts = Contact::Paginate(10);
+    $contacts = Contact::Paginate(2);
     return view('admin', ['contacts' => $contacts]);
+  }
+
+  public function destroy($id)
+  {
+    $contact = Contact::findOrFail($id); // IDでレコードを取得
+    $contact->delete(); // 削除
+    return redirect('/admin');
   }
 
   public function rules()

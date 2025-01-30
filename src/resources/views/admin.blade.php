@@ -97,6 +97,18 @@
           <td>{{ $contact->email }}</td>
         </tr>
         <tr>
+          <th>電話番号</th>
+          <td>{{ $contact->tel }}</td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>{{ $contact->address }}</td>
+        </tr>
+        <tr>
+          <th>建物名</th>
+          <td>{{ $contact->building }}</td>
+        </tr>
+        <tr>
           <th>お問い合わせの種類</th>
           <td>{{ $contact->category_id }}</td>
         </tr>
@@ -105,6 +117,12 @@
           <td>{{ $contact->detail }}</td>
         </tr>
       </table>
+      <!-- 削除フォーム -->
+      <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="delete-btn">削除</button>
+      </form>
     </div>
   </div>
   @endforeach
