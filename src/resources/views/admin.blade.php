@@ -17,60 +17,60 @@
             <input type="text" name="input" placeholder="名前やメールアドレスを入力せてください" value="{{ old('input') }}" />
           </div>
         </div>
+        <select name="gender" class="gender_input" , class="form__select--input">
+          <option value="">性別</option>
+          <option value="male">男性</option>
+          <option value="female">女性</option>
+          <option value="other">その他</option>
+        </select>
+
+        <select name="category_id" class="select_box" , class="form__select--input">
+          <option value="">お問い合わせの種類</option>
+          <option value="general">一般的なお問い合わせ</option>
+          <option value="support">サポートに関するお問い合わせ</option>
+          <option value="exchange">商品の交換について</option>
+        </select>
+
+        <input class="date_input" name="date" type="date" />
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-search">検索</button>
+        <button class="btn-reset">リセット</button>
+        <form action="{{ route('export.csv') }}" method="GET">
+          <button class="btn-export" type="submit">エクスポート</button>
+        </form>
+      </div>
     </form>
+
     @if(isset($item))
     <div class="search-result">
       <p>検索結果:</p>
       <p>{{ $item->name }}</p>
     </div>
+
     @endif
-    <select class="gender_input" , class="form__select--input">
-      <option value="">性別</option>
-      <option value="male">男性</option>
-      <option value="female">女性</option>
-      <option value="female">その他</option>
-    </select>
-
-    <select class="select_box" , class="form__select--input">
-      <option value="">お問い合わせの種類</option>
-      <option value="product">一般的なお問い合わせ</option>
-      <option value="exchange">サポートに関するお問い合わせ</option>
-      <option value="exchange">商品の交換について</option>
-    </select>
-
-    <input class="date_input" name="date" type="date" />
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>お名前</th>
+          <th>性別</th>
+          <th>メールアドレス</th>
+          <th>お問い合わせの種類</th>
+          <th>詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($contacts as $contact)
+        <tr>
+          <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
+          <td>{{ $contact->gender }}</td>
+          <td>{{ $contact->email }}</td>
+          <td>{{ $contact->category_id }}</td>
+          <td>{{ $contact->detail }}</td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
   </div>
-
-  <div class="actions">
-    <button class="btn-search">検索</button>
-    <button class="btn-reset">リセット</button>
-    <form action="{{ route('export.csv') }}" method="GET">
-      <button class="btn-export" type="submit">エクスポート</button>
-    </form>
-  </div>
-
-  <table class="data-table">
-    <thead>
-      <tr>
-        <th>お名前</th>
-        <th>性別</th>
-        <th>メールアドレス</th>
-        <th>お問い合わせの種類</th>
-        <th>詳細</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($contacts as $contact)
-      <tr>
-        <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
-        <td>{{ $contact->gender }}</td>
-        <td>{{ $contact->email }}</td>
-        <td>{{ $contact->category_id }}</td>
-        <td>{{ $contact->detail }}</td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-</div>
-</div>
-@endsection
+  @endsection

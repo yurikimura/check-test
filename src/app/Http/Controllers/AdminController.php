@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
-use App\Models\User;
 
 class AdminController extends Controller
 {
-
-    // public function admin()
-    // {
-    //     $users = User::paginate(5);
-    //     return view('admin', ['users' => $users]);
-    // }
-
+    public function admin()
+    {
+        return view('admin.admin');
+    }
     public function modal()
     {
         return view('admin.modal');
@@ -25,11 +22,50 @@ class AdminController extends Controller
     }
     public function search(Request $request)
     {
-        $item = User::where('name', 'LIKE', "%{$request->input}%")->first();
+        $name = $request->input;
+        $gender = null;
+        switch ($request->gender) {
+            case "male":
+                $gender = "男性";
+                break;
+            case "female":
+                $gender = "女性";
+                break;
+            case "other":
+                $gender = "その他";
+                break;
+        };
+
+        $category_id = null;
+        switch ($request->category_id) {
+            case "general":
+                $category_id = "一般的なお問い合わせ";
+                break;
+            case "support":
+                $category_id = "サポートに関するお問い合わせ";
+                break;
+            case "exchange":
+                $category_id = "商品の交換について";
+                break;
+        };
+
+        $item = Contact::query()
+            ->where(function ($query) use ($name) {
+                $query->where('first_name', 'LIKE', "%{$name}%")
+                    ->orWhere('last_name', 'LIKE', "%{$name}%")
+                    ->orWhere('email', 'LIKE', "%{$name}%");
+            })
+            ->when($gender, function ($query, $gender) {
+                $query->where("gender", $gender);
+            })
+            ->when($category_id, function ($query, $category_id) {
+                $query->where("category_id", $category_id);
+            })
+            ->get();
         $param = [
             'input' => $request->input,
-            'item' => $item
+            'contacts' => $item
         ];
-        return view('find', $param);
+        return view('admin', $param);
     }
 }
