@@ -19,16 +19,19 @@
         FashionablyLate
       </a>
       @if (!request()->is('confirm') && !request()->is('/'))
-      <a class="header__register" href="@yield('register_link', '/login')">
+      @if (request()->is('admin'))
+      <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+        @csrf
+        <button type="submit" class="header__button">Logout</button>
+      </form>
+      @else
+      <a class="header__button" href="@yield('register_link', '/login')">
         @yield('register_text', '')
       </a>
       @endif
-    </div>
+      @endif
 
-    <form class="form" action="/logout" method="post">
-      @csrf
-      <button class="header-nav__button">ログアウト</button>
-    </form>
+    </div>
   </header>
 
   <main>

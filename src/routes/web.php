@@ -28,11 +28,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/search', [AdminController::class, 'search'])->name('admin.search');
     Route::get('/admin/categories', [CategoryController::class, 'index']);
     Route::post('/admin/categories', [CategoryController::class, 'store']);
-    // Route::get('/export/csv', [ExportController::class, 'csvExport'])->name('export.csv');
-    // Route::post('/logout', function () {
-    //     Auth::logout();
-    //     return redirect('/login')->name('logout');
-    // });
+    Route::get('/export/csv', [ExportController::class, 'csvExport'])->name('export.csv');
+    Route::post('/logout', function () {
+        Auth::logout();
+        return redirect('/login');
+    })->name('logout');
 });
 
 // Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
