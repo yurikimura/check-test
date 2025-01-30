@@ -49,7 +49,7 @@ class AdminController extends Controller
                 break;
         };
 
-        $item = Contact::query()
+        $query = Contact::query()
             ->where(function ($query) use ($name) {
                 $query->where('first_name', 'LIKE', "%{$name}%")
                     ->orWhere('last_name', 'LIKE', "%{$name}%")
@@ -60,11 +60,18 @@ class AdminController extends Controller
             })
             ->when($category_id, function ($query, $category_id) {
                 $query->where("category_id", $category_id);
-            })
-            ->get();
+            });
+
+        // 日付検索の追加
+        if ($request->filled('date')) {
+            $query->whereDate('created_at', $request->date);
+        }
+
+        $contacts = $query->paginate(10);
         $param = [
             'input' => $request->input,
-            'contacts' => $item
+            'contacts' => $contacts,
+            'date' => $request->date, // フォームの値を保持
         ];
         return view('admin', $param);
     }

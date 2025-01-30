@@ -31,7 +31,7 @@
           <option value="exchange">商品の交換について</option>
         </select>
 
-        <input class="date_input" name="date" type="date" />
+        <input class="date_input" name="date" type="date" value="{{ request('date') }}" />
       </div>
 
       <div class="actions">
