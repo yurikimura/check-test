@@ -18,7 +18,17 @@
       <a class="header__logo" href="/">
         FashionablyLate
       </a>
+      @if (!request()->is('confirm') && !request()->is('/'))
+      <a class="header__register" href="@yield('register_link', '/login')">
+        @yield('register_text', '')
+      </a>
+      @endif
     </div>
+
+    <form class="form" action="/logout" method="post">
+      @csrf
+      <button class="header-nav__button">ログアウト</button>
+    </form>
   </header>
 
   <main>

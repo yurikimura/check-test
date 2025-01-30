@@ -77,11 +77,11 @@
       <div class="form__group-content">
         <div class="form__input--phone">
           <div class=" phone-group">
-            <input type="tel" id="phone1" name="phone1" placeholder="090" maxlength="3" required>
+            <input type="tel" name="phone1" placeholder="090" maxlength="3" required>
             <span class="phone-separator"> - </span>
-            <input type="tel" id="phone2" name="phone2" placeholder="1234" maxlength="4" required>
+            <input type="tel" name="phone2" placeholder="1234" maxlength="4" required>
             <span class="phone-separator"> - </span>
-            <input type="tel" id="phone3" name="phone3" placeholder="5678" maxlength="4" required>
+            <input type="tel" name="phone3" placeholder="5678" maxlength="4" required>
           </div>
         </div>
         <div class="form__error">

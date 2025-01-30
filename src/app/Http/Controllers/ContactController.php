@@ -14,13 +14,23 @@ class ContactController extends Controller
 
   public function confirm(ContactRequest $request)
   {
-    $contact = $request->only(['last_name', 'first_name', 'email', 'gender', 'tel', 'address', 'building', 'category_id', 'detail']);
+    // phone1, phone2, phone3 を連結して tel にする
+    $tel = $request->input('phone1') . $request->input('phone2') . $request->input('phone3');
+
+    // フォームデータを取得し、tel を追加
+    $contact = $request->only(['last_name', 'first_name', 'email', 'gender', 'address', 'building', 'category_id', 'detail']);
+    $contact['tel'] = $tel; // tel を追加
+
     return view('confirm', compact('contact'));
   }
 
   public function store(ContactRequest $request)
   {
-    $contact = $request->only(['last_name', 'first_name', 'email', 'gender', 'tel', 'address', 'building', 'category_id', 'detail']);
+    $tel = $request->input('phone1') . $request->input('phone2') . $request->input('phone3');
+
+    $contact = $request->only(['last_name', 'first_name', 'email', 'gender', 'address', 'building', 'category_id', 'detail']);
+    $contact['tel'] = $tel; // tel を追加
+
     Contact::create($contact);
     return view('thanks');
   }

@@ -1,4 +1,4 @@
-@extends('layouts.appadmin')
+@extends('layouts.app')
 <style>
   th {
     background-color: #289ADC;
