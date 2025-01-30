@@ -67,10 +67,45 @@
           <td>{{ $contact->gender }}</td>
           <td>{{ $contact->email }}</td>
           <td>{{ $contact->category_id }}</td>
-          <td>{{ $contact->detail }}</td>
+          <td>
+            <a href="#modal-{{ $contact->id }}" class="detail-btn">詳細</a>
+          </td>
         </tr>
         @endforeach
       </tbody>
     </table>
+    {{ $contacts->links() }}
   </div>
+
+  <!-- 各行ごとのモーダル -->
+  @foreach($contacts as $contact)
+  <div id="modal-{{ $contact->id }}" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close-btn">×</a>
+      <h3>お問い合わせ詳細</h3>
+      <table class="modal-table">
+        <tr>
+          <th>お名前</th>
+          <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
+        </tr>
+        <tr>
+          <th>性別</th>
+          <td>{{ $contact->gender }}</td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td>{{ $contact->email }}</td>
+        </tr>
+        <tr>
+          <th>お問い合わせの種類</th>
+          <td>{{ $contact->category_id }}</td>
+        </tr>
+        <tr>
+          <th>お問い合わせ内容</th>
+          <td>{{ $contact->detail }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  @endforeach
   @endsection

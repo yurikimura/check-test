@@ -16,7 +16,6 @@ class ContactController extends Controller
   {
     // phone1, phone2, phone3 を連結して tel にする
     $tel = $request->input('phone1') . $request->input('phone2') . $request->input('phone3');
-
     // フォームデータを取得し、tel を追加
     $contact = $request->only(['last_name', 'first_name', 'email', 'gender', 'address', 'building', 'category_id', 'detail']);
     $contact['tel'] = $tel; // tel を追加
@@ -26,10 +25,7 @@ class ContactController extends Controller
 
   public function store(ContactRequest $request)
   {
-    $tel = $request->input('phone1') . $request->input('phone2') . $request->input('phone3');
-
-    $contact = $request->only(['last_name', 'first_name', 'email', 'gender', 'address', 'building', 'category_id', 'detail']);
-    $contact['tel'] = $tel;
+    $contact = $request->only(['last_name', 'first_name', 'email', 'gender', 'address', 'building', 'category_id', 'detail', 'tel']);
 
     Contact::create($contact);
     return view('thanks');
@@ -37,8 +33,8 @@ class ContactController extends Controller
 
   public function admin()
   {
-    $contacts = Contact::all();
-    return view('admin', compact('contacts'));
+    $contacts = Contact::Paginate(10);
+    return view('admin', ['contacts' => $contacts]);
   }
 
   public function rules()
