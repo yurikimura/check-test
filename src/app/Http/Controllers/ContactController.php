@@ -29,7 +29,7 @@ class ContactController extends Controller
     $tel = $request->input('phone1') . $request->input('phone2') . $request->input('phone3');
 
     $contact = $request->only(['last_name', 'first_name', 'email', 'gender', 'address', 'building', 'category_id', 'detail']);
-    $contact['tel'] = $tel; // tel を追加
+    $contact['tel'] = $tel;
 
     Contact::create($contact);
     return view('thanks');
