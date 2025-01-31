@@ -37,9 +37,6 @@
       <div class="actions">
         <button type="submit" class="btn-search">検索</button>
         <button class="btn-reset">リセット</button>
-        <form action="{{ route('export.csv') }}" method="GET">
-          <button class="btn-export" type="submit">エクスポート</button>
-        </form>
       </div>
     </form>
 
