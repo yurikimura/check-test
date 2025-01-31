@@ -19,22 +19,11 @@ class AdminController extends Controller
         ]);
     }
 
-    public function modal()
-    {
-        return view('admin.modal');
-    }
-
-    public function destroy($id)
-    {
-        $contact = Contact::findOrFail($id); // IDでレコードを取得
-        $contact->delete(); // 削除
-        return redirect('/admin');
-    }
-
     public function find()
     {
         return view('find', ['input' => '']);
     }
+
     public function search(Request $request)
     {
         $name = $request->input;
@@ -52,7 +41,7 @@ class AdminController extends Controller
         };
 
         $category = Category::where('content', $request->category_id)->first();
-        $category_id = $category ? $category->name : null;
+        $category_id = $category ? $category->content : null;
 
 
         $query = Contact::query()

@@ -38,9 +38,9 @@ class ContactRequest extends FormRequest
 
     public function messages()
     {
-        return [
+        return array_merge([
             'last_name.required' => '名前を入力してください',
-            'first_name.required' => '名前を文字列で入力してください',
+            'first_name.required' => '名前を入力してください',
             'gender.required' => '名前を255文字以下で入力してください',
             'email.required' => 'メールアドレスを入力してください',
             'email.string' => 'メールアドレスを文字列で入力してください',
@@ -52,6 +52,6 @@ class ContactRequest extends FormRequest
             'category_id.required' => 'お問い合わせの種類を選択してください',
             'detail.required' => 'お問い合わせ内容を入力してください',
             'detail.max' => 'お問合せ内容は120文字以内で入力してください',
-        ];
+        ]);
     }
 }

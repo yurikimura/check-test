@@ -44,9 +44,12 @@ h2 {
 }
 
 .form__error {
+  display: flex;
   height: 20px;
   color: #ff0000;
   text-align: left;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .form__input--text input,
@@ -135,4 +138,21 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.form__input--name {
+  display: flex;
+  justify-content: space-between;
+}
+
+label.form__radio-label label {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.phone-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

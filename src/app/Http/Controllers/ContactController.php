@@ -34,6 +34,29 @@ class ContactController extends Controller
     return view('thanks');
   }
 
+  public function admin()
+  {
+    $contacts = Contact::paginate(7);
+    $categories = Category::all();
+
+    return view('admin', [
+      'contacts' => $contacts,
+      'categories' => $categories
+    ]);
+  }
+
+  public function modal()
+  {
+    return view('admin.modal');
+  }
+
+  public function destroy($id)
+  {
+    $contact = Contact::findOrFail($id); // IDでレコードを取得
+    $contact->delete(); // 削除
+    return redirect('/admin');
+  }
+
   public function rules()
   {
     return [

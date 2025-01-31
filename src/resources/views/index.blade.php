@@ -19,8 +19,8 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--name">
-          <input type="text" name="last_name" placeholder="例: 山田" value="{{ old('last_name') }}" required />
-          <input type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}" required />
+          <input type="text" name="last_name" placeholder="例: 山田" value="{{ old('last_name') }}" />
+          <input type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}" />
         </div>
         <div class="form__error">
           @error('last_name')
@@ -62,7 +62,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="email" name="email" placeholder="例: test@example.com" value="{{ old('email') }}" required />
+          <input type="email" name="email" placeholder="例: test@example.com" value="{{ old('email') }}" />
         </div>
         <div class="form__error">
           @error('email')
@@ -80,11 +80,11 @@
       <div class="form__group-content">
         <div class="form__input--phone">
           <div class=" phone-group">
-            <input type="tel" name="phone1" placeholder="090" maxlength="3" required>
+            <input type="tel" name="phone1" placeholder="090" maxlength="3">
             <span class="phone-separator"> - </span>
-            <input type="tel" name="phone2" placeholder="1234" maxlength="4" required>
+            <input type="tel" name="phone2" placeholder="1234" maxlength="4">
             <span class="phone-separator"> - </span>
-            <input type="tel" name="phone3" placeholder="5678" maxlength="4" required>
+            <input type="tel" name="phone3" placeholder="5678" maxlength="4">
           </div>
         </div>
         <div class="form__error">
@@ -102,7 +102,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="address" placeholder="例: 東京都渋谷区世田谷1-2-3" value="{{ old('address') }}" required />
+          <input type="text" name="address" placeholder="例: 東京都渋谷区世田谷1-2-3" value="{{ old('address') }}" />
         </div>
         <div class="form__error">
           @error('name')
