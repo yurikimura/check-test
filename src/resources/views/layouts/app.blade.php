@@ -19,7 +19,7 @@
         FashionablyLate
       </a>
       @if (!request()->is('confirm') && !request()->is('/'))
-      @if (request()->is('admin'))
+      @if (request()->is('admin') || request()->is('admin/search'))
       <form method="POST" action="{{ route('logout') }}" style="display: inline;">
         @csrf
         <button type="submit" class="header__button">Logout</button>
