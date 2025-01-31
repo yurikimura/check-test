@@ -24,11 +24,13 @@
           <option value="other">その他</option>
         </select>
 
-        <select name="category_id" class="select_box" , class="form__select--input">
-          <option value="">お問い合わせの種類</option>
-          <option value="general">一般的なお問い合わせ</option>
-          <option value="support">サポートに関するお問い合わせ</option>
-          <option value="exchange">商品の交換について</option>
+        <select name="category_id">
+          <option value="">選択してください</option>
+          @foreach ($categories as $category)
+          <option value="{{ $category->content }}" {{ old('category_id') == $category->content ? 'selected' : '' }}>
+            {{ $category->content }}
+          </option>
+          @endforeach
         </select>
 
         <input class="date_input" name="date" type="date" value="{{ request('date') }}" />

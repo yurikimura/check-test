@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use App\Models\Category;
 
 class ContactController extends Controller
 {
   public function index()
   {
-    return view('index');
+    // categories テーブルの全データを取得
+    $categories = Category::all();
+    return view('index', compact('categories'));
   }
 
   public function confirm(ContactRequest $request)
@@ -29,19 +32,6 @@ class ContactController extends Controller
 
     Contact::create($contact);
     return view('thanks');
-  }
-
-  public function admin()
-  {
-    $contacts = Contact::Paginate(2);
-    return view('admin', ['contacts' => $contacts]);
-  }
-
-  public function destroy($id)
-  {
-    $contact = Contact::findOrFail($id); // IDでレコードを取得
-    $contact->delete(); // 削除
-    return redirect('/admin');
   }
 
   public function rules()

@@ -3,17 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function admin()
     {
-        return view('admin.admin');
+        $contacts = Contact::paginate(7);
+        $categories = Category::all();
+
+        return view('admin', [
+            'contacts' => $contacts,
+            'categories' => $categories
+        ]);
     }
+
     public function modal()
     {
         return view('admin.modal');
+    }
+
+    public function destroy($id)
+    {
+        $contact = Contact::findOrFail($id); // IDでレコードを取得
+        $contact->delete(); // 削除
+        return redirect('/admin');
     }
 
     public function find()
@@ -36,18 +51,9 @@ class AdminController extends Controller
                 break;
         };
 
-        $category_id = null;
-        switch ($request->category_id) {
-            case "general":
-                $category_id = "一般的なお問い合わせ";
-                break;
-            case "support":
-                $category_id = "サポートに関するお問い合わせ";
-                break;
-            case "exchange":
-                $category_id = "商品の交換について";
-                break;
-        };
+        $category = Category::where('content', $request->category_id)->first();
+        $category_id = $category ? $category->name : null;
+
 
         $query = Contact::query()
             ->where(function ($query) use ($name) {
@@ -67,11 +73,13 @@ class AdminController extends Controller
             $query->whereDate('created_at', $request->date);
         }
 
-        $contacts = $query->paginate(10);
+        $contacts = $query->paginate(7);
+        $categories = Category::all();
         $param = [
             'input' => $request->input,
             'contacts' => $contacts,
             'date' => $request->date, // フォームの値を保持
+            'categories' => $categories
         ];
         return view('admin', $param);
     }

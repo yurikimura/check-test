@@ -19,12 +19,15 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--name">
-          <input type="text" name="last_name" placeholder="例: 山田" value="{{ old('first_name') }}" required />
-          <input type="text" name="first_name" placeholder="例: 太郎" value="{{ old('last_name') }}" required />
+          <input type="text" name="last_name" placeholder="例: 山田" value="{{ old('last_name') }}" required />
+          <input type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}" required />
         </div>
         <div class="form__error">
-          @error('name')
-          {{ $message }}
+          @error('last_name')
+          <p class="error-message">{{ $message }}</p>
+          @enderror
+          @error('first_name')
+          <p class="error-message">{{ $message }}</p>
           @enderror
         </div>
       </div>
@@ -132,12 +135,19 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <select name="category_id" class="form__select--input" value="{{ old('category_id') }}">
+          <select name="category_id" class="form__select--input">
             <option value="">選択してください</option>
-            <option value="一般的なお問い合わせ">一般的なお問い合わせ</option>
-            <option value="商品の交換について">商品の交換について</option>
-            <option value="サポートに関するお問い合わせ">サポートに関するお問い合わせ</option>
+            @foreach ($categories as $category)
+            <option value="{{ $category->content }}" {{ old('category_id') == $category->content ? 'selected' : '' }}>
+              {{ $category->content }}
+            </option>
+            @endforeach
           </select>
+        </div>
+        <div class="form__error">
+          @error('category_id')
+          <p class="error-message">{{ $message }}</p>
+          @enderror
         </div>
       </div>
     </div>
