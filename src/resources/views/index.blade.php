@@ -41,7 +41,7 @@
       <div class="form__group-content">
         <label class="form__radio-label">
           <label>
-            <input type="radio" name="gender" value="男性" class="form__radio--styled" {{ old('gender') == '男性' ? 'checked' : '' }}>
+            <input type="radio" name="gender" value="男性" class="form__radio--styled" checked old('gender')=='男性' ? 'checked' : '' }}>
             男性
           </label>
           <label>
