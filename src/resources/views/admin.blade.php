@@ -27,7 +27,7 @@
         <select name="category_id">
           <option value="">選択してください</option>
           @foreach ($categories as $category)
-          <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+          <option value="{{ $category->content }}" {{ old('category_id') == $category->content ? 'selected' : '' }}>
             {{ $category->content }}
           </option>
           @endforeach
@@ -46,7 +46,6 @@
     <div class="search-result">
       <p>検索結果:</p>
       <p>{{ $item->name }}</p>
-      <p>{{ $categories->firstWhere('id', $item->category_id)->content }}</p>
     </div>
 
     @endif

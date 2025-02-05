@@ -27,7 +27,7 @@ class ContactRequest extends FormRequest
             'last_name' => ['required', 'string', 'max:255'],
             'first_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'gender' => ['required', 'tinyint'],
+            'gender' => ['required', 'string'],
             'tel' => ['nullable', 'numeric', 'digits_between:10,11'],
             'address' => ['required', 'string', 'max:255'],
             'building' => ['nullable', 'string', 'max:255'],
