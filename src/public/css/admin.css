@@ -163,6 +163,18 @@ svg.w-5.h-5 {
   height: 30px;
 }
 
+.detail-btn {
+  background-color: #F4F4F44D;
+  color: #D9C6B5;
+  padding: 10px 20px;
+  border: 1px solid #D9C6B599;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-size: 17px;
+}
+
 /* モーダルの基本スタイル */
 .modal {
   display: none;
@@ -194,9 +206,10 @@ svg.w-5.h-5 {
 }
 
 .close-btn {
-  background: red;
-  color: white;
-  border: none;
+  background: white;
+  color: #8B7969;
+  border-radius: 50%;
+  border: 1px solid #8B7969;
   padding: 10px;
   cursor: pointer;
   text-decoration: none;
@@ -229,7 +242,7 @@ svg.w-5.h-5 {
   border: none;
   cursor: pointer;
   display: block;
-  width: 100%;
+  width: 30%;
   text-align: center;
   margin-top: 10px;
   text-decoration: none;
