@@ -24,7 +24,8 @@ Route::resource('contacts', ContactController::class);
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);
     Route::get('/admin/find', [AdminController::class, 'find'])->name('admin.find');
-    Route::post('/admin/search', [AdminController::class, 'search'])->name('admin.search');
+    // Route::post('/admin/search', [AdminController::class, 'search'])->name('admin.search');
+    Route::match(['get', 'post'], '/admin/search', [AdminController::class, 'search'])->name('admin.search');
     Route::get('/admin/categories', [CategoryController::class, 'index']);
     Route::post('/admin/categories', [CategoryController::class, 'store']);
     Route::post('/logout', function () {
