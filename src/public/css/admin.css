@@ -206,16 +206,21 @@ svg.w-5.h-5 {
 }
 
 .close-btn {
-  background: white;
-  color: #8B7969;
-  border-radius: 50%;
-  border: 1px solid #8B7969;
-  padding: 10px;
-  cursor: pointer;
-  text-decoration: none;
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 1rem;
+  right: 1rem;
+  border: 1px solid #8B7969;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #8B7969;
+  background: none;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 .modal-table {
@@ -226,25 +231,18 @@ svg.w-5.h-5 {
 
 .modal-table th,
 .modal-table td {
-  border: 1px solid #ddd;
   padding: 8px;
-}
-
-.modal-table th {
-  background-color: #f2f2f2;
   text-align: left;
 }
 
 .delete-btn {
-  background: red;
-  color: white;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
   display: block;
-  width: 30%;
-  text-align: center;
-  margin-top: 10px;
-  text-decoration: none;
-  border-radius: 5px;
+  margin: 2rem auto 0;
+  padding: 0.75rem 3rem;
+  background-color: #BA370D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
 }
