@@ -45,7 +45,7 @@
             男性
           </label>
           <label>
-            <input type="radio" name="gender" value=1 class="form__radio--styled" {{ old('gender') == 2 ? 'checked' : '' }}>
+            <input type="radio" name="gender" value=2 class="form__radio--styled" {{ old('gender') == 2 ? 'checked' : '' }}>
             女性
           </label>
           <label>
