@@ -27,7 +27,7 @@
         <select name="category_id" class="category_input">
           <option value="">お問い合わせの種類</option>
           @foreach ($categories as $category)
-          <option value="{{ $category->content }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+          <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : (request('category_id') == $category->id ? 'selected' : '') }}>
             {{ $category->content }}
           </option>
           @endforeach
@@ -38,7 +38,7 @@
 
       <div class="actions">
         <button type="submit" class="btn-search">検索</button>
-        <button class="btn-reset">リセット</button>
+        <button type="button" class="btn-reset" onclick="window.location.href='/admin'">リセット</button>
       </div>
     </form>
 
@@ -73,7 +73,7 @@
         @endforeach
       </tbody>
     </table>
-    {{ $contacts->links() }}
+    {{ $contacts->appends(request()->except('page'))->links() }}
   </div>
 
   <!-- 各行ごとのモーダル -->
