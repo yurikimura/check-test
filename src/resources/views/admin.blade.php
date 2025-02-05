@@ -24,8 +24,8 @@
           <option value="other">その他</option>
         </select>
 
-        <select name="category_id">
-          <option value="">選択してください</option>
+        <select name="category_id" class="category_input">
+          <option value="">お問い合わせの種類</option>
           @foreach ($categories as $category)
           <option value="{{ $category->content }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
             {{ $category->content }}
