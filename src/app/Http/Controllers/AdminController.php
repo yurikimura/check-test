@@ -26,9 +26,21 @@ class AdminController extends Controller
 
     public function search(Request $request)
     {
+        $name = $request->input;
+        $gender = null;
+        switch ($request->gender) {
+            case "male":
+                $gender = "男性";
+                break;
+            case "female":
+                $gender = "女性";
+                break;
+            case "other":
+                $gender = "その他";
+                break;
+        };
+
         $category_id = $request->category_id;
-        $gender = $request->gender;
-        $name = $request->name;
 
         $query = Contact::query()
             ->where(function ($query) use ($name) {
