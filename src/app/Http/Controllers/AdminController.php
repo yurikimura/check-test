@@ -29,13 +29,13 @@ class AdminController extends Controller
         $name = $request->input;
         $gender = null;
         switch ($request->gender) {
-            case "male":
+            case 1:
                 $gender = "男性";
                 break;
-            case "female":
+            case 2:
                 $gender = "女性";
                 break;
-            case "other":
+            case 3:
                 $gender = "その他";
                 break;
         };

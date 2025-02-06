@@ -19,9 +19,9 @@
         </div>
         <select name="gender" class="gender_input" , class="form__select--input">
           <option value="">性別</option>
-          <option value="male">男性</option>
-          <option value="female">女性</option>
-          <option value="other">その他</option>
+          <option value=1>男性</option>
+          <option value=2>女性</option>
+          <option value=3>その他</option>
         </select>
 
         <select name="category_id" class="category_input">
