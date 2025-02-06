@@ -14,6 +14,26 @@ Laravel 環境構築
 1. `docker-compose exec php bash`
 2. `composer install`
 3. env.example ファイルから.env を作成し、環境変数を変更
+   `cp env.example .env`
+
+   ```
+   // 前略
+
+   DB_CONNECTION=mysql
+   - DB_HOST=127.0.0.1
+   + DB_HOST=mysql
+   DB_PORT=3306
+   - DB_DATABASE=laravel
+   - DB_USERNAME=root
+   - DB_PASSWORD=
+   + DB_DATABASE=laravel_db
+   + DB_USERNAME=laravel_user
+   + DB_PASSWORD=laravel_pass
+
+   // 後略
+
+   ```
+
 4. `php artisan key.generate`
 5. `php artisan migrate`
 6. `php artisan db:seed`
